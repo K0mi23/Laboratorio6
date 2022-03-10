@@ -22,7 +22,7 @@ namespace Laboratorio6
             string[] lines = File.ReadAllLines(@"InformacionCliente.txt");
             File.WriteAllLines(@"InformacionCliente.txt", lines.Distinct().ToArray());
             string[] lines1 = File.ReadAllLines(@"InformacionAutomoviles.txt");
-            File.WriteAllLines(@"InformacionAutomoviles.txt", lines1.Distinct().ToArray());
+            File.WriteAllLines(@"InformacionAutomoviles.txt", lines1.Distinct().ToArray()); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
