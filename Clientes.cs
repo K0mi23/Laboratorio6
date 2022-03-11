@@ -112,10 +112,7 @@ namespace Laboratorio6
                 precioxKm.Text = LineaSeleccionada.Cells[4].Value.ToString(); //Precio x Kilometro
             }
             catch (Exception ex) { MessageBox.Show("Error!\n\n Por favor seleccionar un empleado valido!"); }
-
-
         }
-
         private void calcularTOTAL_Click(object sender, EventArgs e)
         {
             decimal precioxKM = Convert.ToDecimal(precioxKm.Text);
