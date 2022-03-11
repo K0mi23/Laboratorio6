@@ -10,6 +10,8 @@ namespace Laboratorio6
     {
         public string placaAuto { get; set; }
         public string marcaAuto { get; set; }
+        public string modeloAuto { get; set; }
+        public string colorAuto { get; set; }
         public decimal precioxKilometro { get; set; }
     }
 }

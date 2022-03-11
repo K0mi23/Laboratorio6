@@ -42,6 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.NITcliente = new System.Windows.Forms.TextBox();
+            this.formAutomovil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.informacionCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,6 +176,17 @@
             this.NITcliente.Size = new System.Drawing.Size(129, 20);
             this.NITcliente.TabIndex = 36;
             // 
+            // formAutomovil
+            // 
+            this.formAutomovil.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.formAutomovil.Location = new System.Drawing.Point(41, 439);
+            this.formAutomovil.Name = "formAutomovil";
+            this.formAutomovil.Size = new System.Drawing.Size(129, 29);
+            this.formAutomovil.TabIndex = 45;
+            this.formAutomovil.Text = "AutoMoviles";
+            this.formAutomovil.UseVisualStyleBackColor = true;
+            this.formAutomovil.Click += new System.EventHandler(this.formAutomovil_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,6 +195,7 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(523, 490);
+            this.Controls.Add(this.formAutomovil);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.fechaDevolucionVehiculo);
@@ -225,6 +238,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox NITcliente;
+        private System.Windows.Forms.Button formAutomovil;
     }
 }
 

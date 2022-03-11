@@ -37,14 +37,14 @@
             this.PlacaAutomovil = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.MarcaAutomovil = new System.Windows.Forms.ComboBox();
-            this.informacionEmpleado = new System.Windows.Forms.DataGridView();
-            this.BotonListaEmpleados = new System.Windows.Forms.Button();
+            this.informacionAutos = new System.Windows.Forms.DataGridView();
+            this.BotonIngresarNuevoColor = new System.Windows.Forms.Button();
             this.botonGuardarEmpleado = new System.Windows.Forms.Button();
             this.modeloAutomovil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.precioxKilometro)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informacionEmpleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informacionAutos)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
@@ -82,38 +82,12 @@
             this.colorAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.colorAutomovil.FormattingEnabled = true;
             this.colorAutomovil.Items.AddRange(new object[] {
-            "Audi",
-            "Acura",
-            "BMW",
-            "Buick",
-            "Cadillac",
-            "Chevrolet",
-            "Dodge",
-            "Fiat",
-            "Ford",
-            "GMD",
-            "Genesis",
-            "Honda",
-            "Hyundai",
-            "Inifniti",
-            "Jaguar",
-            "Jeep",
-            "Kia",
-            "Land Rover",
-            "Lexus",
-            "Lincoln",
-            "Mazda",
-            "Mercedes Benz",
-            "Mini",
-            "Mitsubishi",
-            "Nissan",
-            "Pontiac",
-            "Porsche",
-            "Ford",
-            "Saab",
-            "Toyota",
-            "Volkswagen",
-            "Volvo"});
+            "Azul",
+            "Rojo",
+            "Blanco",
+            "Naranja",
+            "Cafe",
+            "Negro"});
             this.colorAutomovil.Location = new System.Drawing.Point(215, 158);
             this.colorAutomovil.Name = "colorAutomovil";
             this.colorAutomovil.Size = new System.Drawing.Size(129, 21);
@@ -142,6 +116,7 @@
             // PlacaAutomovil
             // 
             this.PlacaAutomovil.Location = new System.Drawing.Point(215, 77);
+            this.PlacaAutomovil.MaxLength = 7;
             this.PlacaAutomovil.Name = "PlacaAutomovil";
             this.PlacaAutomovil.Size = new System.Drawing.Size(129, 20);
             this.PlacaAutomovil.TabIndex = 51;
@@ -163,35 +138,11 @@
             this.MarcaAutomovil.FormattingEnabled = true;
             this.MarcaAutomovil.Items.AddRange(new object[] {
             "Audi",
-            "Acura",
-            "BMW",
-            "Buick",
-            "Cadillac",
-            "Chevrolet",
-            "Dodge",
             "Fiat",
-            "Ford",
-            "GMD",
-            "Genesis",
-            "Honda",
-            "Hyundai",
-            "Inifniti",
-            "Jaguar",
-            "Jeep",
-            "Kia",
             "Land Rover",
-            "Lexus",
-            "Lincoln",
-            "Mazda",
             "Mercedes Benz",
-            "Mini",
             "Mitsubishi",
             "Nissan",
-            "Pontiac",
-            "Porsche",
-            "Ford",
-            "Saab",
-            "Toyota",
             "Volkswagen",
             "Volvo"});
             this.MarcaAutomovil.Location = new System.Drawing.Point(215, 106);
@@ -199,24 +150,24 @@
             this.MarcaAutomovil.Size = new System.Drawing.Size(129, 21);
             this.MarcaAutomovil.TabIndex = 49;
             // 
-            // informacionEmpleado
+            // informacionAutos
             // 
-            this.informacionEmpleado.BackgroundColor = System.Drawing.Color.Silver;
-            this.informacionEmpleado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.informacionEmpleado.Location = new System.Drawing.Point(99, 266);
-            this.informacionEmpleado.Name = "informacionEmpleado";
-            this.informacionEmpleado.Size = new System.Drawing.Size(347, 165);
-            this.informacionEmpleado.TabIndex = 57;
+            this.informacionAutos.BackgroundColor = System.Drawing.Color.Silver;
+            this.informacionAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.informacionAutos.Location = new System.Drawing.Point(99, 266);
+            this.informacionAutos.Name = "informacionAutos";
+            this.informacionAutos.Size = new System.Drawing.Size(347, 165);
+            this.informacionAutos.TabIndex = 57;
             // 
-            // BotonListaEmpleados
+            // BotonIngresarNuevoColor
             // 
-            this.BotonListaEmpleados.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonListaEmpleados.Location = new System.Drawing.Point(99, 439);
-            this.BotonListaEmpleados.Name = "BotonListaEmpleados";
-            this.BotonListaEmpleados.Size = new System.Drawing.Size(154, 39);
-            this.BotonListaEmpleados.TabIndex = 59;
-            this.BotonListaEmpleados.Text = "Lista Vehiculos";
-            this.BotonListaEmpleados.UseVisualStyleBackColor = true;
+            this.BotonIngresarNuevoColor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BotonIngresarNuevoColor.Location = new System.Drawing.Point(99, 439);
+            this.BotonIngresarNuevoColor.Name = "BotonIngresarNuevoColor";
+            this.BotonIngresarNuevoColor.Size = new System.Drawing.Size(154, 39);
+            this.BotonIngresarNuevoColor.TabIndex = 59;
+            this.BotonIngresarNuevoColor.Text = "Ingresar Nuevo Color";
+            this.BotonIngresarNuevoColor.UseVisualStyleBackColor = true;
             // 
             // botonGuardarEmpleado
             // 
@@ -232,6 +183,7 @@
             // modeloAutomovil
             // 
             this.modeloAutomovil.Location = new System.Drawing.Point(215, 132);
+            this.modeloAutomovil.MaxLength = 4;
             this.modeloAutomovil.Name = "modeloAutomovil";
             this.modeloAutomovil.Size = new System.Drawing.Size(129, 20);
             this.modeloAutomovil.TabIndex = 61;
@@ -265,9 +217,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.modeloAutomovil);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BotonListaEmpleados);
+            this.Controls.Add(this.BotonIngresarNuevoColor);
             this.Controls.Add(this.botonGuardarEmpleado);
-            this.Controls.Add(this.informacionEmpleado);
+            this.Controls.Add(this.informacionAutos);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.precioxKilometro);
             this.Controls.Add(this.colorAutomovil);
@@ -281,7 +233,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresoAutomovil";
             ((System.ComponentModel.ISupportInitialize)(this.precioxKilometro)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.informacionEmpleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.informacionAutos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,8 +250,8 @@
         private System.Windows.Forms.TextBox PlacaAutomovil;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox MarcaAutomovil;
-        private System.Windows.Forms.DataGridView informacionEmpleado;
-        private System.Windows.Forms.Button BotonListaEmpleados;
+        private System.Windows.Forms.DataGridView informacionAutos;
+        private System.Windows.Forms.Button BotonIngresarNuevoColor;
         private System.Windows.Forms.Button botonGuardarEmpleado;
         private System.Windows.Forms.TextBox modeloAutomovil;
         private System.Windows.Forms.Label label1;

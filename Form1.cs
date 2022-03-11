@@ -25,15 +25,14 @@ namespace Laboratorio6
             
         }
         
-        private void limpiarTexti()
+        private void limpiarTexto()
         {
             verificarLineasRepetidas();
             NITcliente.Text = "";
             nombreCompletoCliente.Text = "";
             DireccionCliente.Text = "";
+            NITcliente.Focus();
         }
-
-        
         private void visualizar()
         {
             informacionCliente.DataSource = null;
@@ -66,6 +65,8 @@ namespace Laboratorio6
                 GuardarenArchivo();
 
             }
+            limpiarTexto();
+
         }
 
         private void GuardarenArchivo()
@@ -82,6 +83,11 @@ namespace Laboratorio6
             writer.Close();
         }
 
-        
+        private void formAutomovil_Click(object sender, EventArgs e)
+        {
+            verificarLineasRepetidas();
+            IngresoAutomovil formAutomoviles = new IngresoAutomovil();
+            formAutomoviles.ShowDialog();
+        }
     }
 }
