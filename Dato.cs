@@ -13,6 +13,10 @@ namespace Laboratorio6
         public string direccionCliente { get; set; }
         public string fechaDevolucion { get; set; }
         public string fechaAlquiler  { get; set; }
+        public string marcaAuto { get; set; }
+  
+        public string placaAuto { get; set; }
+
 
 
 

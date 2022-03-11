@@ -43,6 +43,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.NITcliente = new System.Windows.Forms.TextBox();
             this.formAutomovil = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.MarcaAutomovil = new System.Windows.Forms.ComboBox();
+            this.PlacaAutomovil = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.informacionCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,10 +54,11 @@
             // 
             this.informacionCliente.BackgroundColor = System.Drawing.Color.Silver;
             this.informacionCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.informacionCliente.Location = new System.Drawing.Point(41, 268);
+            this.informacionCliente.Location = new System.Drawing.Point(41, 321);
             this.informacionCliente.Name = "informacionCliente";
             this.informacionCliente.Size = new System.Drawing.Size(442, 165);
             this.informacionCliente.TabIndex = 31;
+            this.informacionCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.informacionCliente_CellContentClick);
             // 
             // label4
             // 
@@ -126,7 +131,7 @@
             // botonGuardarClientes
             // 
             this.botonGuardarClientes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botonGuardarClientes.Location = new System.Drawing.Point(187, 224);
+            this.botonGuardarClientes.Location = new System.Drawing.Point(187, 279);
             this.botonGuardarClientes.Name = "botonGuardarClientes";
             this.botonGuardarClientes.Size = new System.Drawing.Size(129, 29);
             this.botonGuardarClientes.TabIndex = 40;
@@ -136,14 +141,14 @@
             // 
             // fechaAlquilerVehiculo
             // 
-            this.fechaAlquilerVehiculo.Location = new System.Drawing.Point(187, 172);
+            this.fechaAlquilerVehiculo.Location = new System.Drawing.Point(187, 227);
             this.fechaAlquilerVehiculo.Name = "fechaAlquilerVehiculo";
             this.fechaAlquilerVehiculo.Size = new System.Drawing.Size(227, 20);
             this.fechaAlquilerVehiculo.TabIndex = 41;
             // 
             // fechaDevolucionVehiculo
             // 
-            this.fechaDevolucionVehiculo.Location = new System.Drawing.Point(187, 198);
+            this.fechaDevolucionVehiculo.Location = new System.Drawing.Point(187, 253);
             this.fechaDevolucionVehiculo.Name = "fechaDevolucionVehiculo";
             this.fechaDevolucionVehiculo.Size = new System.Drawing.Size(227, 20);
             this.fechaDevolucionVehiculo.TabIndex = 42;
@@ -152,7 +157,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(129, 174);
+            this.label5.Location = new System.Drawing.Point(129, 229);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 14);
             this.label5.TabIndex = 43;
@@ -162,7 +167,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(110, 200);
+            this.label7.Location = new System.Drawing.Point(110, 255);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 14);
             this.label7.TabIndex = 44;
@@ -179,13 +184,60 @@
             // formAutomovil
             // 
             this.formAutomovil.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.formAutomovil.Location = new System.Drawing.Point(41, 439);
+            this.formAutomovil.Location = new System.Drawing.Point(41, 492);
             this.formAutomovil.Name = "formAutomovil";
             this.formAutomovil.Size = new System.Drawing.Size(129, 29);
             this.formAutomovil.TabIndex = 45;
             this.formAutomovil.Text = "AutoMoviles";
             this.formAutomovil.UseVisualStyleBackColor = true;
             this.formAutomovil.Click += new System.EventHandler(this.formAutomovil_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(138, 203);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 14);
+            this.label10.TabIndex = 63;
+            this.label10.Text = "Marca";
+            // 
+            // MarcaAutomovil
+            // 
+            this.MarcaAutomovil.BackColor = System.Drawing.Color.White;
+            this.MarcaAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MarcaAutomovil.FormattingEnabled = true;
+            this.MarcaAutomovil.Items.AddRange(new object[] {
+            "Audi",
+            "Fiat",
+            "Land Rover",
+            "Mercedes Benz",
+            "Mitsubishi",
+            "Nissan",
+            "Volkswagen",
+            "Volvo"});
+            this.MarcaAutomovil.Location = new System.Drawing.Point(187, 200);
+            this.MarcaAutomovil.Name = "MarcaAutomovil";
+            this.MarcaAutomovil.Size = new System.Drawing.Size(129, 21);
+            this.MarcaAutomovil.TabIndex = 62;
+            // 
+            // PlacaAutomovil
+            // 
+            this.PlacaAutomovil.Location = new System.Drawing.Point(187, 172);
+            this.PlacaAutomovil.MaxLength = 7;
+            this.PlacaAutomovil.Name = "PlacaAutomovil";
+            this.PlacaAutomovil.Size = new System.Drawing.Size(129, 20);
+            this.PlacaAutomovil.TabIndex = 69;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(141, 175);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(39, 14);
+            this.label11.TabIndex = 68;
+            this.label11.Text = "Placa";
             // 
             // Form1
             // 
@@ -194,7 +246,11 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(523, 490);
+            this.ClientSize = new System.Drawing.Size(523, 534);
+            this.Controls.Add(this.PlacaAutomovil);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.MarcaAutomovil);
             this.Controls.Add(this.formAutomovil);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -239,6 +295,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox NITcliente;
         private System.Windows.Forms.Button formAutomovil;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox MarcaAutomovil;
+        private System.Windows.Forms.TextBox PlacaAutomovil;
+        private System.Windows.Forms.Label label11;
     }
 }
 

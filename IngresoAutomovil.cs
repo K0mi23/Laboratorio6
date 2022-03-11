@@ -36,23 +36,42 @@ namespace Laboratorio6
 
         }
         List<DatoVehiculo> datosVehiculos = new List<DatoVehiculo>();
+        string Archivo = File.ReadAllText(@"InformacionAutomoviles.txt");
         private void botonGuardarEmpleado_Click(object sender, EventArgs e)
         {
+            verificarLineasRepetidas();
             if (PlacaAutomovil.Text == "" && MarcaAutomovil.Text == "" && modeloAutomovil.Text == ""&& colorAutomovil.Text=="")
             {
                 MessageBox.Show("Porfavor completar la información!");
             }
             else
             {
-                DatoVehiculo datosAutomovil = new DatoVehiculo();
-                datosAutomovil.placaAuto = PlacaAutomovil.Text;
-                datosAutomovil.marcaAuto= MarcaAutomovil.Text;
-                datosAutomovil.modeloAuto=modeloAutomovil.Text;
-                datosAutomovil.colorAuto = colorAutomovil.Text;
-                datosAutomovil.precioxKilometro = Convert.ToDecimal(precioxKilometro.Value);
-                datosVehiculos.Add(datosAutomovil);
-                visualizar();
-                GuardarenArchivo();
+              
+                if(Archivo.Contains(PlacaAutomovil.Text))
+                {
+                    MessageBox.Show("Esta placa ya ha sido registrada en otro vehiculo!");
+                }
+                else
+                {
+                    if (Archivo.Contains(PlacaAutomovil.Text) && Archivo.Contains(modeloAutomovil.Text) && Archivo.Contains(MarcaAutomovil.Text) && Archivo.Contains(colorAutomovil.Text))
+                    {
+                        MessageBox.Show("Este Automovil ya ha sido registrado");
+                    }
+                    else
+                    {
+                        DatoVehiculo datosAutomovil = new DatoVehiculo();
+                        datosAutomovil.placaAuto = PlacaAutomovil.Text;
+                        datosAutomovil.marcaAuto = MarcaAutomovil.Text;
+                        datosAutomovil.modeloAuto = modeloAutomovil.Text;
+                        datosAutomovil.colorAuto = colorAutomovil.Text;
+                        datosAutomovil.precioxKilometro = Convert.ToDecimal(precioxKilometro.Value);
+                        datosVehiculos.Add(datosAutomovil);
+                        visualizar();
+                        GuardarenArchivo();
+                    }
+                }
+                
+
 
             }
             limpiarTexto();

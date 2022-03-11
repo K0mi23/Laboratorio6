@@ -31,6 +31,8 @@ namespace Laboratorio6
             NITcliente.Text = "";
             nombreCompletoCliente.Text = "";
             DireccionCliente.Text = "";
+            PlacaAutomovil.Text = "";
+            MarcaAutomovil.SelectedIndex = -1;
             NITcliente.Focus();
         }
         private void visualizar()
@@ -60,9 +62,11 @@ namespace Laboratorio6
                 datosCliente.direccionCliente = DireccionCliente.Text;
                 datosCliente.fechaAlquiler = fechaAlquilerVehiculo.Text;
                 datosCliente.fechaDevolucion = fechaDevolucionVehiculo.Text;
+                datosCliente.placaAuto = PlacaAutomovil.Text;
+                datosCliente.marcaAuto = MarcaAutomovil.Text;
                 datosClientes.Add(datosCliente);
                 visualizar();
-                GuardarenArchivo();
+               GuardarenArchivo();
 
             }
             limpiarTexto();
@@ -88,6 +92,11 @@ namespace Laboratorio6
             verificarLineasRepetidas();
             IngresoAutomovil formAutomoviles = new IngresoAutomovil();
             formAutomoviles.ShowDialog();
+        }
+
+        private void informacionCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

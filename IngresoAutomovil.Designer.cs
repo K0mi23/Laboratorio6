@@ -154,7 +154,7 @@
             // 
             this.informacionAutos.BackgroundColor = System.Drawing.Color.Silver;
             this.informacionAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.informacionAutos.Location = new System.Drawing.Point(99, 266);
+            this.informacionAutos.Location = new System.Drawing.Point(99, 290);
             this.informacionAutos.Name = "informacionAutos";
             this.informacionAutos.Size = new System.Drawing.Size(347, 165);
             this.informacionAutos.TabIndex = 57;
@@ -162,7 +162,7 @@
             // BotonIngresarNuevoColor
             // 
             this.BotonIngresarNuevoColor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonIngresarNuevoColor.Location = new System.Drawing.Point(99, 439);
+            this.BotonIngresarNuevoColor.Location = new System.Drawing.Point(99, 463);
             this.BotonIngresarNuevoColor.Name = "BotonIngresarNuevoColor";
             this.BotonIngresarNuevoColor.Size = new System.Drawing.Size(154, 39);
             this.BotonIngresarNuevoColor.TabIndex = 59;
@@ -201,7 +201,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(292, 437);
+            this.button1.Location = new System.Drawing.Point(292, 461);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 39);
             this.button1.TabIndex = 62;
@@ -213,7 +213,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(523, 490);
+            this.ClientSize = new System.Drawing.Size(523, 534);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.modeloAutomovil);
             this.Controls.Add(this.label1);
