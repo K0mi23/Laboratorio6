@@ -99,6 +99,28 @@ namespace Laboratorio6
             informacionAutos.Refresh();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            verificarLineasRepetidas();
+            IngresarColorModelo NuevoAuto = new IngresarColorModelo();
+            NuevoAuto.ShowDialog();
+        }
 
+        private void lecturaArchivoVehiculos()
+        {
+            string[] lineaArchivo = File.ReadAllLines(@"ListaAutomovilesIIColores.txt");
+            foreach (var linea in lineaArchivo)
+            {
+                var marcaAuto = linea.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries)[0];
+                
+                MarcaAutomovil.Items.Add(marcaAuto);
+            }
+        }
+
+        private void IngresoAutomovil_Load(object sender, EventArgs e)
+        {
+            //lecturaArchivoVehiculos();
+            
+        }
     }
 }

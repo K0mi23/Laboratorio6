@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarAutoNuevo.cs" />
     <Compile Include="Dato.cs" />
     <Compile Include="DatoVehiculo.cs" />
     <Compile Include="Form1.cs">
@@ -53,6 +54,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarColorModelo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarColorModelo.Designer.cs">
+      <DependentUpon>IngresarColorModelo.cs</DependentUpon>
     </Compile>
     <Compile Include="IngresoAutomovil.cs">
       <SubType>Form</SubType>
@@ -64,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarColorModelo.resx">
+      <DependentUpon>IngresarColorModelo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresoAutomovil.resx">
       <DependentUpon>IngresoAutomovil.cs</DependentUpon>

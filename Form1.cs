@@ -17,6 +17,7 @@ namespace Laboratorio6
         {
             InitializeComponent();
         }
+
         List<Dato> datosClientes = new List<Dato>();
         private void verificarLineasRepetidas()
         {

@@ -207,15 +207,6 @@
             this.MarcaAutomovil.BackColor = System.Drawing.Color.White;
             this.MarcaAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MarcaAutomovil.FormattingEnabled = true;
-            this.MarcaAutomovil.Items.AddRange(new object[] {
-            "Audi",
-            "Fiat",
-            "Land Rover",
-            "Mercedes Benz",
-            "Mitsubishi",
-            "Nissan",
-            "Volkswagen",
-            "Volvo"});
             this.MarcaAutomovil.Location = new System.Drawing.Point(187, 200);
             this.MarcaAutomovil.Name = "MarcaAutomovil";
             this.MarcaAutomovil.Size = new System.Drawing.Size(129, 21);

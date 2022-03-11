@@ -38,7 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.MarcaAutomovil = new System.Windows.Forms.ComboBox();
             this.informacionAutos = new System.Windows.Forms.DataGridView();
-            this.BotonIngresarNuevoColor = new System.Windows.Forms.Button();
             this.botonGuardarEmpleado = new System.Windows.Forms.Button();
             this.modeloAutomovil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -81,13 +80,6 @@
             this.colorAutomovil.BackColor = System.Drawing.Color.White;
             this.colorAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.colorAutomovil.FormattingEnabled = true;
-            this.colorAutomovil.Items.AddRange(new object[] {
-            "Azul",
-            "Rojo",
-            "Blanco",
-            "Naranja",
-            "Cafe",
-            "Negro"});
             this.colorAutomovil.Location = new System.Drawing.Point(215, 158);
             this.colorAutomovil.Name = "colorAutomovil";
             this.colorAutomovil.Size = new System.Drawing.Size(129, 21);
@@ -136,15 +128,6 @@
             this.MarcaAutomovil.BackColor = System.Drawing.Color.White;
             this.MarcaAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MarcaAutomovil.FormattingEnabled = true;
-            this.MarcaAutomovil.Items.AddRange(new object[] {
-            "Audi",
-            "Fiat",
-            "Land Rover",
-            "Mercedes Benz",
-            "Mitsubishi",
-            "Nissan",
-            "Volkswagen",
-            "Volvo"});
             this.MarcaAutomovil.Location = new System.Drawing.Point(215, 106);
             this.MarcaAutomovil.Name = "MarcaAutomovil";
             this.MarcaAutomovil.Size = new System.Drawing.Size(129, 21);
@@ -158,16 +141,6 @@
             this.informacionAutos.Name = "informacionAutos";
             this.informacionAutos.Size = new System.Drawing.Size(347, 165);
             this.informacionAutos.TabIndex = 57;
-            // 
-            // BotonIngresarNuevoColor
-            // 
-            this.BotonIngresarNuevoColor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BotonIngresarNuevoColor.Location = new System.Drawing.Point(99, 463);
-            this.BotonIngresarNuevoColor.Name = "BotonIngresarNuevoColor";
-            this.BotonIngresarNuevoColor.Size = new System.Drawing.Size(154, 39);
-            this.BotonIngresarNuevoColor.TabIndex = 59;
-            this.BotonIngresarNuevoColor.Text = "Ingresar Nuevo Color";
-            this.BotonIngresarNuevoColor.UseVisualStyleBackColor = true;
             // 
             // botonGuardarEmpleado
             // 
@@ -201,12 +174,13 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(292, 461);
+            this.button1.Location = new System.Drawing.Point(99, 461);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 39);
+            this.button1.Size = new System.Drawing.Size(347, 39);
             this.button1.TabIndex = 62;
-            this.button1.Text = "Ingresar nuevo Modelo";
+            this.button1.Text = "Ingresar nuevo Modelo y Color";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // IngresoAutomovil
             // 
@@ -217,7 +191,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.modeloAutomovil);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BotonIngresarNuevoColor);
             this.Controls.Add(this.botonGuardarEmpleado);
             this.Controls.Add(this.informacionAutos);
             this.Controls.Add(this.label9);
@@ -229,9 +202,11 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.MarcaAutomovil);
             this.Controls.Add(this.label6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "IngresoAutomovil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IngresoAutomovil";
+            this.Load += new System.EventHandler(this.IngresoAutomovil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.precioxKilometro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.informacionAutos)).EndInit();
             this.ResumeLayout(false);
@@ -251,7 +226,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox MarcaAutomovil;
         private System.Windows.Forms.DataGridView informacionAutos;
-        private System.Windows.Forms.Button BotonIngresarNuevoColor;
         private System.Windows.Forms.Button botonGuardarEmpleado;
         private System.Windows.Forms.TextBox modeloAutomovil;
         private System.Windows.Forms.Label label1;
