@@ -46,16 +46,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dato.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngresoAutomovil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresoAutomovil.Designer.cs">
+      <DependentUpon>IngresoAutomovil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresoAutomovil.resx">
+      <DependentUpon>IngresoAutomovil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -81,28 +91,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Blur-Background-69.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\622717454-683e9ce460f37d4ea4b7d5bef9129e61ee4259f7c81297215e1a1dbb467d6a29-d_640x360.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\0b0ff96a9683f1c8abd0177fa59d8d8a.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\922b8afdbf2a8aa799377b155bd91874.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\blurry-city-lights-1080x1920.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\lights-car-dark-minimalism-wallpaper-preview.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\387a4cbaa4d0b15e543ec436be9f3a74.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\6bbdedbc4e49f54007edc768c730ede6.jpg" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
