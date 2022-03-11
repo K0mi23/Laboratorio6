@@ -45,8 +45,9 @@
             this.formAutomovil = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.MarcaAutomovil = new System.Windows.Forms.ComboBox();
-            this.PlacaAutomovil = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.PlacaAutomoviles = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.informacionCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,7 +189,7 @@
             this.formAutomovil.Name = "formAutomovil";
             this.formAutomovil.Size = new System.Drawing.Size(129, 29);
             this.formAutomovil.TabIndex = 45;
-            this.formAutomovil.Text = "AutoMoviles";
+            this.formAutomovil.Text = "Automoviles";
             this.formAutomovil.UseVisualStyleBackColor = true;
             this.formAutomovil.Click += new System.EventHandler(this.formAutomovil_Click);
             // 
@@ -212,14 +213,6 @@
             this.MarcaAutomovil.Size = new System.Drawing.Size(129, 21);
             this.MarcaAutomovil.TabIndex = 62;
             // 
-            // PlacaAutomovil
-            // 
-            this.PlacaAutomovil.Location = new System.Drawing.Point(187, 172);
-            this.PlacaAutomovil.MaxLength = 7;
-            this.PlacaAutomovil.Name = "PlacaAutomovil";
-            this.PlacaAutomovil.Size = new System.Drawing.Size(129, 20);
-            this.PlacaAutomovil.TabIndex = 69;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -230,6 +223,27 @@
             this.label11.TabIndex = 68;
             this.label11.Text = "Placa";
             // 
+            // PlacaAutomoviles
+            // 
+            this.PlacaAutomoviles.BackColor = System.Drawing.Color.White;
+            this.PlacaAutomoviles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PlacaAutomoviles.FormattingEnabled = true;
+            this.PlacaAutomoviles.Location = new System.Drawing.Point(187, 173);
+            this.PlacaAutomoviles.Name = "PlacaAutomoviles";
+            this.PlacaAutomoviles.Size = new System.Drawing.Size(129, 21);
+            this.PlacaAutomoviles.TabIndex = 70;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(176, 492);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 29);
+            this.button1.TabIndex = 71;
+            this.button1.Text = "Listado Clientes";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +252,8 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(523, 534);
-            this.Controls.Add(this.PlacaAutomovil);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.PlacaAutomoviles);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.MarcaAutomovil);
@@ -288,8 +303,9 @@
         private System.Windows.Forms.Button formAutomovil;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox MarcaAutomovil;
-        private System.Windows.Forms.TextBox PlacaAutomovil;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.ComboBox PlacaAutomoviles;
+        private System.Windows.Forms.Button button1;
     }
 }
 

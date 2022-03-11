@@ -16,6 +16,8 @@ namespace Laboratorio6
         public Form1()
         {
             InitializeComponent();
+            AgregarInformacionCombobox();
+
         }
 
         List<Dato> datosClientes = new List<Dato>();
@@ -32,7 +34,7 @@ namespace Laboratorio6
             NITcliente.Text = "";
             nombreCompletoCliente.Text = "";
             DireccionCliente.Text = "";
-            PlacaAutomovil.Text = "";
+            PlacaAutomoviles.Text = "";
             MarcaAutomovil.SelectedIndex = -1;
             NITcliente.Focus();
         }
@@ -44,9 +46,27 @@ namespace Laboratorio6
             informacionCliente.Refresh();
         }
 
+
+        public void AgregarInformacionCombobox()
+        {
+            string[] lineaArchivo = File.ReadAllLines(@"ListaMARCA.txt");
+            foreach (var linea in lineaArchivo)
+            {
+                var marcaAuto = linea.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries)[0];
+
+                MarcaAutomovil.Items.Add(marcaAuto);
+            }
+
+            string[] lineaArchivoPLACA = File.ReadAllLines(@"InformacionAutomoviles.txt");
+            foreach (var linea in lineaArchivoPLACA)
+            {
+                var marcaAuto = linea.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries)[0];
+
+                PlacaAutomoviles.Items.Add(marcaAuto);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void botonGuardarClientes_Click(object sender, EventArgs e)
@@ -63,7 +83,7 @@ namespace Laboratorio6
                 datosCliente.direccionCliente = DireccionCliente.Text;
                 datosCliente.fechaAlquiler = fechaAlquilerVehiculo.Text;
                 datosCliente.fechaDevolucion = fechaDevolucionVehiculo.Text;
-                datosCliente.placaAuto = PlacaAutomovil.Text;
+                datosCliente.placaAuto = PlacaAutomoviles.Text;
                 datosCliente.marcaAuto = MarcaAutomovil.Text;
                 datosClientes.Add(datosCliente);
                 visualizar();
@@ -90,14 +110,23 @@ namespace Laboratorio6
 
         private void formAutomovil_Click(object sender, EventArgs e)
         {
-            verificarLineasRepetidas();
+            this.Hide();
             IngresoAutomovil formAutomoviles = new IngresoAutomovil();
+            formAutomoviles.Closed += (s, args) => this.Close();
             formAutomoviles.ShowDialog();
         }
 
         private void informacionCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Clientes formClientes = new Clientes();
+            formClientes.Closed += (s, args) => this.Close();
+            formClientes.ShowDialog();
         }
     }
 }

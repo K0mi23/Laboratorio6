@@ -39,9 +39,10 @@
             this.MarcaAutomovil = new System.Windows.Forms.ComboBox();
             this.informacionAutos = new System.Windows.Forms.DataGridView();
             this.botonGuardarEmpleado = new System.Windows.Forms.Button();
-            this.modeloAutomovil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.ModeloAutomovil = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.precioxKilometro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.informacionAutos)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +81,7 @@
             this.colorAutomovil.BackColor = System.Drawing.Color.White;
             this.colorAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.colorAutomovil.FormattingEnabled = true;
-            this.colorAutomovil.Location = new System.Drawing.Point(215, 158);
+            this.colorAutomovil.Location = new System.Drawing.Point(215, 159);
             this.colorAutomovil.Name = "colorAutomovil";
             this.colorAutomovil.Size = new System.Drawing.Size(129, 21);
             this.colorAutomovil.TabIndex = 54;
@@ -137,7 +138,7 @@
             // 
             this.informacionAutos.BackgroundColor = System.Drawing.Color.Silver;
             this.informacionAutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.informacionAutos.Location = new System.Drawing.Point(99, 290);
+            this.informacionAutos.Location = new System.Drawing.Point(99, 267);
             this.informacionAutos.Name = "informacionAutos";
             this.informacionAutos.Size = new System.Drawing.Size(347, 165);
             this.informacionAutos.TabIndex = 57;
@@ -153,14 +154,6 @@
             this.botonGuardarEmpleado.UseVisualStyleBackColor = true;
             this.botonGuardarEmpleado.Click += new System.EventHandler(this.botonGuardarEmpleado_Click);
             // 
-            // modeloAutomovil
-            // 
-            this.modeloAutomovil.Location = new System.Drawing.Point(215, 132);
-            this.modeloAutomovil.MaxLength = 4;
-            this.modeloAutomovil.Name = "modeloAutomovil";
-            this.modeloAutomovil.Size = new System.Drawing.Size(129, 20);
-            this.modeloAutomovil.TabIndex = 61;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -174,7 +167,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(99, 461);
+            this.button1.Location = new System.Drawing.Point(99, 438);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(347, 39);
             this.button1.TabIndex = 62;
@@ -182,14 +175,36 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ModeloAutomovil
+            // 
+            this.ModeloAutomovil.BackColor = System.Drawing.Color.White;
+            this.ModeloAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ModeloAutomovil.FormattingEnabled = true;
+            this.ModeloAutomovil.Location = new System.Drawing.Point(215, 133);
+            this.ModeloAutomovil.Name = "ModeloAutomovil";
+            this.ModeloAutomovil.Size = new System.Drawing.Size(129, 21);
+            this.ModeloAutomovil.TabIndex = 63;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(12, 495);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 27);
+            this.button2.TabIndex = 64;
+            this.button2.Text = "Regresar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // IngresoAutomovil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(523, 534);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ModeloAutomovil);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.modeloAutomovil);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.botonGuardarEmpleado);
             this.Controls.Add(this.informacionAutos);
@@ -227,8 +242,9 @@
         private System.Windows.Forms.ComboBox MarcaAutomovil;
         private System.Windows.Forms.DataGridView informacionAutos;
         private System.Windows.Forms.Button botonGuardarEmpleado;
-        private System.Windows.Forms.TextBox modeloAutomovil;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox ModeloAutomovil;
+        private System.Windows.Forms.Button button2;
     }
 }

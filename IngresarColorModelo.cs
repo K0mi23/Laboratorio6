@@ -20,7 +20,7 @@ namespace Laboratorio6
             verificarLineasRepetidas();
             verificarLineasRepetidas1();
             verificarLineasRepetidas2();
-            #endregion
+            #endregion     
         }
 
         List<AgregarAutoNuevo> datosVehiculos = new List<AgregarAutoNuevo>();
@@ -34,19 +34,19 @@ namespace Laboratorio6
         private void verificarLineasRepetidas()
         {
             string[] lines1 = File.ReadAllLines(@"ListaMARCA.txt");
-            File.WriteAllLines(@"ListaMARCA.txt", lines1.Distinct().ToArray());
+            File.WriteAllLines(@"ListaMARCA.txt", lines1.Distinct().ToArray().Where(line => !line.Contains("		|")));
 
         }
         private void verificarLineasRepetidas1()
         {
             string[] lines1 = File.ReadAllLines(@"ListaMODELO.txt");
-            File.WriteAllLines(@"ListaMODELO.txt", lines1.Distinct().ToArray());
+            File.WriteAllLines(@"ListaMODELO.txt", lines1.Distinct().ToArray().Where(line => !line.Contains("		|")));
 
         }
         private void verificarLineasRepetidas2()
         {
             string[] lines1 = File.ReadAllLines(@"ListaCOLORES.txt");
-            File.WriteAllLines(@"ListaCOLORES.txt", lines1.Distinct().ToArray());
+            File.WriteAllLines(@"ListaCOLORES.txt", lines1.Distinct().ToArray().Where(line => !line.Contains("		|")));
 
         }
 
@@ -55,36 +55,71 @@ namespace Laboratorio6
         string Archivo2 = File.ReadAllText(@"ListaCOLORES.txt");
         private void botonGuardarNuevoAuto_Click(object sender, EventArgs e)
         {
-            #region VerificarLineasRepetidas
-            verificarLineasRepetidas();
-            verificarLineasRepetidas1();
-            verificarLineasRepetidas2();
-            #endregion
+            
 
             if (Archivo.Contains(MarcaAutomovil.Text)&&Archivo1.Contains(ModeloAutomovil.Text)&&Archivo2.Contains(ColorAutomovil.Text))
             {
                 MessageBox.Show("Este Auto ya ha sido registrado en el sistema");
             }
             else
-            {   
+            {
                 AgregarAutoNuevo datosAutomovil = new AgregarAutoNuevo();
-                datosAutomovil.marcaAuto = MarcaAutomovil.Text;
-                datosAutomovil.modeloAuto = ModeloAutomovil.Text;
-                datosAutomovil.colorAuto = ColorAutomovil.Text;
-                datosVehiculos.Add(datosAutomovil);
-                visualizar();
-                GuardarenArchivoMARCA();
-                GuardarenArchivoMODELO();
-                GuardarenArchivoCOLOR();
+                if (MarcaAutomovil.Text=="" && ModeloAutomovil.Text=="")
+                {
+                    datosAutomovil.colorAuto = ColorAutomovil.Text;
+                    datosAutomovil.marcaAuto = "";
+                    datosAutomovil.modeloAuto = "";
+                    datosVehiculos.Add(datosAutomovil);
+                    visualizar();
+                    GuardarenArchivoMARCA();
+                    GuardarenArchivoMODELO();
+                    GuardarenArchivoCOLOR();
+                }
+                else if(ModeloAutomovil.Text=="" && ColorAutomovil.Text=="")
+                {
+                    datosAutomovil.marcaAuto = MarcaAutomovil.Text;
+                    datosAutomovil.modeloAuto = "";
+                    datosAutomovil.colorAuto = "";
+                    datosVehiculos.Add(datosAutomovil);
+                    visualizar();
+                    GuardarenArchivoMARCA();
+                    GuardarenArchivoMODELO();
+                    GuardarenArchivoCOLOR();
+                }
+                else if(MarcaAutomovil.Text=="" && ColorAutomovil.Text=="")
+                {
+                    datosAutomovil.modeloAuto = ModeloAutomovil.Text;
+                    datosAutomovil.marcaAuto = "";
+                    datosAutomovil.colorAuto = "";
+                    datosVehiculos.Add(datosAutomovil);
+                    visualizar();
+                    GuardarenArchivoMARCA();
+                    GuardarenArchivoMODELO();
+                    GuardarenArchivoCOLOR();
+                }
+                else
+                {
+                    datosAutomovil.marcaAuto = MarcaAutomovil.Text;
+                    datosAutomovil.modeloAuto = ModeloAutomovil.Text;
+                    datosAutomovil.colorAuto = ColorAutomovil.Text;
+                    datosVehiculos.Add(datosAutomovil);
+                    visualizar();
+                    GuardarenArchivoMARCA();
+                    GuardarenArchivoMODELO();
+                    GuardarenArchivoCOLOR();
+                }
+                
+             
             }
             limpiarTexto();
-            
+            #region VerificarLineasRepetidas
+            verificarLineasRepetidas();
+            verificarLineasRepetidas1();
+            verificarLineasRepetidas2();
+            #endregion
 
 
         }
-
-        
-
         private void GuardarenArchivoMARCA()
         {
             TextWriter writer = new StreamWriter(@"ListaMARCA.txt",true);
@@ -143,6 +178,14 @@ namespace Laboratorio6
             verificarLineasRepetidas1();
             verificarLineasRepetidas2();
             #endregion
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            IngresoAutomovil formAutomoviles = new IngresoAutomovil();
+            formAutomoviles.Closed += (s, args) => this.Close();
+            formAutomoviles.ShowDialog();
         }
     }
 }

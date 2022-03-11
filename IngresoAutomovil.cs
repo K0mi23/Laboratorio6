@@ -24,7 +24,7 @@ namespace Laboratorio6
             verificarLineasRepetidas();
             PlacaAutomovil.Text = "";
             MarcaAutomovil.SelectedIndex = -1;
-            modeloAutomovil.Text = "";
+            ModeloAutomovil.Text = "";
             colorAutomovil.SelectedIndex = -1;
             precioxKilometro.Value = 0;
             PlacaAutomovil.Focus();
@@ -40,7 +40,7 @@ namespace Laboratorio6
         private void botonGuardarEmpleado_Click(object sender, EventArgs e)
         {
             verificarLineasRepetidas();
-            if (PlacaAutomovil.Text == "" && MarcaAutomovil.Text == "" && modeloAutomovil.Text == ""&& colorAutomovil.Text=="")
+            if (PlacaAutomovil.Text == "" && MarcaAutomovil.Text == "" && ModeloAutomovil.Text == ""&& colorAutomovil.Text=="")
             {
                 MessageBox.Show("Porfavor completar la información!");
             }
@@ -53,7 +53,7 @@ namespace Laboratorio6
                 }
                 else
                 {
-                    if (Archivo.Contains(PlacaAutomovil.Text) && Archivo.Contains(modeloAutomovil.Text) && Archivo.Contains(MarcaAutomovil.Text) && Archivo.Contains(colorAutomovil.Text))
+                    if (Archivo.Contains(PlacaAutomovil.Text) && Archivo.Contains(ModeloAutomovil.Text) && Archivo.Contains(MarcaAutomovil.Text) && Archivo.Contains(colorAutomovil.Text))
                     {
                         MessageBox.Show("Este Automovil ya ha sido registrado");
                     }
@@ -62,7 +62,7 @@ namespace Laboratorio6
                         DatoVehiculo datosAutomovil = new DatoVehiculo();
                         datosAutomovil.placaAuto = PlacaAutomovil.Text;
                         datosAutomovil.marcaAuto = MarcaAutomovil.Text;
-                        datosAutomovil.modeloAuto = modeloAutomovil.Text;
+                        datosAutomovil.modeloAuto = ModeloAutomovil.Text;
                         datosAutomovil.colorAuto = colorAutomovil.Text;
                         datosAutomovil.precioxKilometro = Convert.ToDecimal(precioxKilometro.Value);
                         datosVehiculos.Add(datosAutomovil);
@@ -75,6 +75,8 @@ namespace Laboratorio6
 
             }
             limpiarTexto();
+
+
         }
 
         private void GuardarenArchivo()
@@ -102,25 +104,53 @@ namespace Laboratorio6
         private void button1_Click(object sender, EventArgs e)
         {
             verificarLineasRepetidas();
+            this.Hide();
             IngresarColorModelo NuevoAuto = new IngresarColorModelo();
+            NuevoAuto.Closed += (s, args) => this.Close();
             NuevoAuto.ShowDialog();
         }
 
         private void lecturaArchivoVehiculos()
         {
-            string[] lineaArchivo = File.ReadAllLines(@"ListaAutomovilesIIColores.txt");
+            string[] lineaArchivo = File.ReadAllLines(@"ListaMARCA.txt");
             foreach (var linea in lineaArchivo)
             {
                 var marcaAuto = linea.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries)[0];
                 
                 MarcaAutomovil.Items.Add(marcaAuto);
             }
+
+            string[] lineaArchivoCOLORES = File.ReadAllLines(@"ListaCOLORES.txt");
+            foreach (var linea in lineaArchivoCOLORES)
+            {
+                var colorAuto = linea.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries)[0];
+
+                colorAutomovil.Items.Add(colorAuto);
+            }
+
+            string[] lineaArchivoMODELO = File.ReadAllLines(@"ListaMODELO.txt");
+            foreach (var linea in lineaArchivoMODELO)
+            {
+                var modeloAuto = linea.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries)[0];
+
+                ModeloAutomovil.Items.Add(modeloAuto);
+            }
+
         }
 
         private void IngresoAutomovil_Load(object sender, EventArgs e)
         {
-            //lecturaArchivoVehiculos();
-            
+            lecturaArchivoVehiculos();
+ 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form = new Form1();
+            form.Closed += (s, args) => this.Close();
+            form.ShowDialog();
         }
     }
+
 }
