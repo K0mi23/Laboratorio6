@@ -33,19 +33,7 @@ namespace Laboratorio6
             DireccionCliente.Text = "";
         }
 
-        private void GuardarenArchivo()
-        {
-            TextWriter writer = new StreamWriter(@"InformacionCliente.txt");
-            for (int i = 0; i < informacionCliente.Rows.Count; i++)
-            {
-                for (int j = 0; j < informacionCliente.Columns.Count - 2; j++)
-                {
-                    writer.Write("\t" + informacionCliente.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
-                }
-                writer.WriteLine("");
-            }
-            writer.Close();
-        }
+        
         private void visualizar()
         {
             informacionCliente.DataSource = null;
@@ -68,16 +56,32 @@ namespace Laboratorio6
             else
             {  
                 Dato datosCliente = new Dato();
-                datosCliente.NitCliente = Convert.ToInt16(NITcliente.Text);
+                datosCliente.NitCliente = Int32.Parse(NITcliente.Text);
                 datosCliente.nombreCliente = nombreCompletoCliente.Text;
                 datosCliente.direccionCliente = DireccionCliente.Text;
-                datosCliente.fechaAlquiler = fechaAlquilerVehiculo.Value;
-                datosCliente.fechaDevolucion = fechaDevolucionVehiculo.Value;
+                datosCliente.fechaAlquiler = fechaAlquilerVehiculo.Text;
+                datosCliente.fechaDevolucion = fechaDevolucionVehiculo.Text;
                 datosClientes.Add(datosCliente);
                 visualizar();
                 GuardarenArchivo();
 
             }
         }
+
+        private void GuardarenArchivo()
+        {
+            TextWriter writer = new StreamWriter(@"InformacionCliente.txt", true);
+            for (int i = 0; i < informacionCliente.Rows.Count; i++)
+            {
+                for (int j = 0; j < informacionCliente.Columns.Count; j++)
+                {
+                    writer.Write("\t" + informacionCliente.Rows[i].Cells[j].Value.ToString() + "\t" + "|");
+                }
+                writer.WriteLine("");
+            }
+            writer.Close();
+        }
+
+        
     }
 }
