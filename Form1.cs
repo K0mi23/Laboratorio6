@@ -128,5 +128,10 @@ namespace Laboratorio6
             formClientes.Closed += (s, args) => this.Close();
             formClientes.ShowDialog();
         }
+
+        private void PlacaAutomoviles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

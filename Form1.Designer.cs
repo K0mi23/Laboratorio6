@@ -232,6 +232,7 @@
             this.PlacaAutomoviles.Name = "PlacaAutomoviles";
             this.PlacaAutomoviles.Size = new System.Drawing.Size(129, 21);
             this.PlacaAutomoviles.TabIndex = 70;
+            this.PlacaAutomoviles.SelectedIndexChanged += new System.EventHandler(this.PlacaAutomoviles_SelectedIndexChanged);
             // 
             // button1
             // 

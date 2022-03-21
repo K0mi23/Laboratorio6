@@ -127,7 +127,6 @@
             // MarcaAutomovil
             // 
             this.MarcaAutomovil.BackColor = System.Drawing.Color.White;
-            this.MarcaAutomovil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.MarcaAutomovil.FormattingEnabled = true;
             this.MarcaAutomovil.Location = new System.Drawing.Point(215, 106);
             this.MarcaAutomovil.Name = "MarcaAutomovil";
